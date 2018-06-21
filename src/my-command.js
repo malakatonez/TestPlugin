@@ -1,3 +1,14 @@
+// export default function(context) {
+//   context.document.showMessage("It's alive 🙌")
+// }
+
 export default function(context) {
-  context.document.showMessage("It's alive 🙌")
+  const selectedLayers = context.selection
+  const selectedCount = selectedLayers.length
+
+  if (selectedCount === 0) {
+    context.document.showMessage('No layers are selected.')
+  } else {
+    context.document.showMessage(`${selectedCount} layers selected.`)
+  }
 }
